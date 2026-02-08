@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive;
+      background-color: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    img {
+      width: 200px;
+      margin: 20px 0;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Will you be my Valentine? </h1>
+
+    <img src="https://media1.tenor.com/m/CGQOSjUZ6ggAAAAC/corazon-de-minion-minion.gif" alt="Minion Heart">
+
+    <div>
+      <button id="yesBtn">yes :3</button>
+      <button id="noBtn">no :o</button>
+    </div>
+  </div>
+<audio id="yippieSound" src="yippee-tbh.mp3"></audio>
+<script>
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const yippieSound = document.getElementById("yippieSound");
+
+  yesBtn.onclick = function () {
+    yippieSound.play();
+
+    document.body.innerHTML = `
+      <div style="text-align:center;">
+        <h1>YIPPIE!!! :))</h1>
+        <h2>I love you <3</h2>
+        <img 
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWI5bWphbDYydXBsa3ZlcmVsajhncXJjc2kxdTNqZG5lbW1reXZlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q46sPy6dkObWG3hLa8/giphy.gif"
+          style="width:250px; margin-top:20px;"
+        >
+      </div>
+    `;
+  };
+
+  noBtn.onmouseover = function () {
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * 80 + "vw";
+    noBtn.style.top = Math.random() * 80 + "vh";
+  };
+</script>
+
+</body>
+</html>
